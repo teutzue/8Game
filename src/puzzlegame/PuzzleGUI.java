@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 //it works!
 //gershtdjyfkugilho;jp'k
 // hehehe
+//rihards
 
 /**
  *
