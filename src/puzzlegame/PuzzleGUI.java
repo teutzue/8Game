@@ -462,15 +462,15 @@ int i=0;
         jButton8.setVisible(true);
         jButton9.setVisible(false);
             
-        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
-        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
-        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
-        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
-        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
-        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
-        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
-        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
-        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
+        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/1.jpg")));
+        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/2.jpg")));
+        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/3.jpg")));
+        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/4.jpg")));
+        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/5.jpg")));
+        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/6.jpg")));
+        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/7.jpg")));
+        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/8.jpg")));
+        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/9.jpg")));
         puzzleDone();
     }//GEN-LAST:event_jButton10ActionPerformed
 
