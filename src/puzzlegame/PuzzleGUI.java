@@ -31,6 +31,7 @@ int i=0;
         jButton9.setVisible(false);
         setTitle("PuzzleGame");
         setIcons();
+        startRandom();
         
     }
 
@@ -436,15 +437,15 @@ int i=0;
         jButton8.setVisible(true);
         jButton9.setVisible(false);
             
-        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
-        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
-        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
-        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
-        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
-        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
-        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
-        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
-        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
+        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/1.jpg")));
+        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/2.jpg")));
+        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/3.jpg")));
+        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/4.jpg")));
+        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/5.jpg")));
+        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/6.jpg")));
+        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/7.jpg")));
+        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/8.jpg")));
+        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/9.jpg")));
         puzzleDone();
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -463,6 +464,114 @@ int i=0;
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        /*if (jButton9.isVisible() == false) {
+        i=0;
+        
+        int n=8;  //numeros aleatorios
+        int k=n;  //auxiliar;
+        int[] numeros=new int[n];
+        int[] valor=new int[n];
+        Random rnd=new Random();
+        int res;
+
+        //se rellena una matriz ordenada del 1 al 9(1..n)
+        for(int i=0;i<n;i++){
+            numeros[i]=i+1;
+        }
+
+        for(int i=0;i<n;i++){
+            res=rnd.nextInt(k);
+            valor[i]=numeros[res];
+            numeros[res]=numeros[k-1];
+            k--;
+            System.out.println(valor[i]);
+        }
+        System.out.println("------------------------------------------");
+
+        jButton1.setText(String.valueOf(valor[0]));
+        jButton2.setText(String.valueOf(valor[1]));
+        jButton3.setText(String.valueOf(valor[2]));
+        jButton4.setText(String.valueOf(valor[3]));
+        jButton5.setText(String.valueOf(valor[4]));
+        jButton6.setText(String.valueOf(valor[5]));
+        jButton7.setText(String.valueOf(valor[6]));
+        jButton8.setText(String.valueOf(valor[7]));
+        
+        jButton9.setVisible(false);//espacio que permite realizar los moviemientos en le PUZZLE
+        
+        System.out.println("------------------------------------------");
+        this.jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[0]+".jpg")));
+        this.jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[1]+".jpg")));
+        this.jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[2]+".jpg")));
+        this.jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[3]+".jpg")));
+        this.jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[4]+".jpg")));
+        this.jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[5]+".jpg")));
+        this.jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[6]+".jpg")));
+        this.jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[7]+".jpg")));
+        } else {
+          JOptionPane.showMessageDialog(rootPane,"You suck!");  
+        }
+        
+       */ 
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    // End of variables declaration//GEN-END:variables
+
+private void puzzleDone() {
+       String b1=jButton1.getText();
+       String b2=jButton2.getText();
+       String b3=jButton3.getText();
+       String b4=jButton4.getText();
+       String b5=jButton5.getText();
+       String b6=jButton6.getText();
+       String b7=jButton7.getText();
+       String b8=jButton8.getText();
+       //String b9=btn9.getText();
+       
+       if(b1.equals("1")&&b2.equals("2")&&b3.equals("3")&&b4.equals("4")&&
+          b5.equals("5")&&b6.equals("6")&&b7.equals("7")&&b8.equals("8")&&jButton9.isVisible()==false){
+           JOptionPane.showMessageDialog(rootPane,"You completed the picture!! Here are some informations about the picture:");    
+       }    
+       
+    }   
+private void setIcons() {
+   /* jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/1.jpg")));
+    jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/2.jpg")));
+    jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/3.jpg")));
+    jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/4.jpg")));
+    jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/5.jpg")));
+    jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/6.jpg")));
+    jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/7.jpg")));
+    jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/8.jpg")));
+    jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/9.jpg")));
+    */
+    jLabel2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid.jpg")));
+    jLabel3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/brand.jpg")));
+    
+}
+public void startRandom() {
+       
         i=0;
         
         int n=8;  //numeros aleatorios
@@ -507,62 +616,7 @@ int i=0;
         this.jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[6]+".jpg")));
         this.jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[7]+".jpg")));
         
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    // End of variables declaration//GEN-END:variables
-
-private void puzzleDone() {
-       String b1=jButton1.getText();
-       String b2=jButton2.getText();
-       String b3=jButton3.getText();
-       String b4=jButton4.getText();
-       String b5=jButton5.getText();
-       String b6=jButton6.getText();
-       String b7=jButton7.getText();
-       String b8=jButton8.getText();
-       //String b9=btn9.getText();
-       
-       if(b1.equals("1")&&b2.equals("2")&&b3.equals("3")&&b4.equals("4")&&
-          b5.equals("5")&&b6.equals("6")&&b7.equals("7")&&b8.equals("8")&&jButton9.isVisible()==false){
-           JOptionPane.showMessageDialog(rootPane,"You completed the picture!! Here are some informations about the picture:");    
-       }    
-       
-    }   
-private void setIcons() {
-    jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
-    jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
-    jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
-    jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
-    jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
-    jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
-    jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
-    jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
-    jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
-    jLabel2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid.jpg")));
-    jLabel3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/brand.jpg")));
-    
+        
 }
-  
 }
 
