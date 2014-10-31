@@ -6,6 +6,8 @@
 package puzzlegame;
 
 import java.awt.Color;
+import java.util.Random;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 //it works!
 //gershtdjyfkugilho;jp'k
@@ -16,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author AlexanderNielsen
  */
 public class PuzzleGUI extends javax.swing.JFrame {
-
+int i=0;
     /**
      * Creates new form PuzzleGUI
      */
@@ -55,6 +57,7 @@ public class PuzzleGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(48, 105, 150));
@@ -170,6 +173,13 @@ public class PuzzleGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton11.setText("Start");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,18 +191,24 @@ public class PuzzleGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addGap(0, 61, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addGap(0, 61, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jButton11)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,7 +222,9 @@ public class PuzzleGUI extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addComponent(jButton11)
+                        .addGap(36, 36, 36)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -417,15 +435,15 @@ public class PuzzleGUI extends javax.swing.JFrame {
         jButton8.setVisible(true);
         jButton9.setVisible(false);
             
-        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile1.jpg")));
-        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile2.jpg")));
-        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile3.jpg")));
-        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile4.jpg")));
-        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile5.jpg")));
-        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile6.jpg")));
-        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile7.jpg")));
-        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile8.jpg")));
-        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile9.jpg")));
+        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
+        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
+        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
+        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
+        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
+        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
+        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
+        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
+        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
         puzzleDone();
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -442,6 +460,54 @@ public class PuzzleGUI extends javax.swing.JFrame {
         jButton10.setBackground(Color.gray);
     }//GEN-LAST:event_jButton10MouseExited
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        i=0;
+        
+        int n=8;  //numeros aleatorios
+        int k=n;  //auxiliar;
+        int[] numeros=new int[n];
+        int[] valor=new int[n];
+        Random rnd=new Random();
+        int res;
+
+        //se rellena una matriz ordenada del 1 al 9(1..n)
+        for(int i=0;i<n;i++){
+            numeros[i]=i+1;
+        }
+
+        for(int i=0;i<n;i++){
+            res=rnd.nextInt(k);
+            valor[i]=numeros[res];
+            numeros[res]=numeros[k-1];
+            k--;
+            System.out.println(valor[i]);
+        }
+        System.out.println("------------------------------------------");
+
+        jButton1.setText(String.valueOf(valor[0]));
+        jButton2.setText(String.valueOf(valor[1]));
+        jButton3.setText(String.valueOf(valor[2]));
+        jButton4.setText(String.valueOf(valor[3]));
+        jButton5.setText(String.valueOf(valor[4]));
+        jButton6.setText(String.valueOf(valor[5]));
+        jButton7.setText(String.valueOf(valor[6]));
+        jButton8.setText(String.valueOf(valor[7]));
+        
+        jButton9.setVisible(false);//espacio que permite realizar los moviemientos en le PUZZLE
+        
+        System.out.println("------------------------------------------");
+        this.jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[0]+".jpg")));
+        this.jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[1]+".jpg")));
+        this.jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[2]+".jpg")));
+        this.jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[3]+".jpg")));
+        this.jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[4]+".jpg")));
+        this.jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[5]+".jpg")));
+        this.jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[6]+".jpg")));
+        this.jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[7]+".jpg")));
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -449,6 +515,7 @@ public class PuzzleGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -482,19 +549,19 @@ private void puzzleDone() {
        
     }   
 private void setIcons() {
-    jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile1.jpg")));
-    jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile2.jpg")));
-    jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile3.jpg")));
-    jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile4.jpg")));
-    jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile5.jpg")));
-    jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile6.jpg")));
-    jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile7.jpg")));
-    jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile8.jpg")));
-    jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/Tile9.jpg")));
+    jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
+    jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
+    jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
+    jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
+    jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
+    jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
+    jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
+    jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
+    jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
     jLabel2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid.jpg")));
     jLabel3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/brand.jpg")));
     
 }
-    
+  
 }
 
