@@ -6,33 +6,35 @@
 package puzzlegame;
 
 import java.awt.Color;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Random;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
-//it works!
-//gershtdjyfkugilho;jp'k
-// hehehe
-//rihards
 
 /**
  *
  * @author AlexanderNielsen
  */
 public class PuzzleGUI extends javax.swing.JFrame {
-int i=0;
+
+    int i = 0;
+    javax.swing.Timer timer;
+
     /**
      * Creates new form PuzzleGUI
      */
     public PuzzleGUI() {
         initComponents();
-        setSize(800, 600);                 // Sets the default size to 500x500
+        setSize(800, 600);                 // Sets the default size to 800x600
+        setResizable(false);
         getContentPane().setBackground(new Color(48, 105, 150));
         setLocationRelativeTo(null);       // Puts the app in the middle
-        jButton9.setVisible(false);
-        setTitle("PuzzleGame");
-        setIcons();
+        jButton9.setVisible(false);// make button number 9 invisible
+        setTitle(" 8 PuzzleGame");//set the title "PuzzleGame"
+        setIcons();//calls the setIcons mehtod
         startRandom();
         
+
     }
 
     /**
@@ -60,7 +62,7 @@ int i=0;
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        Clock = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,18 +185,23 @@ int i=0;
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("0");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Clock.setBackground(new java.awt.Color(153, 153, 153));
+        Clock.setFont(new java.awt.Font("Trajan Pro 3", 3, 18)); // NOI18N
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Clock.setText("0:00:00");
+        Clock.setToolTipText("");
+        Clock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Clock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                ClockMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                ClockMouseEntered(evt);
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Futura", 3, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Time:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -205,56 +212,56 @@ int i=0;
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(154, 154, 154)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(73, 73, 73)
+                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(62, 62, 62)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(75, 75, 75)
+                                    .addComponent(jButton11)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(Clock, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 138, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(73, 73, 73)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(41, 41, 41)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(jButton11)))
-                        .addGap(0, 61, Short.MAX_VALUE)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                                .addComponent(Clock, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addComponent(jButton11)
                         .addGap(36, 36, 36)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(16, 16, 16))
         );
 
@@ -262,20 +269,20 @@ int i=0;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        if(jButton9.isVisible()==false){
+        // sets button's 6 behaviour in relation to its neighbours > 9,3,5
+        if (jButton9.isVisible() == false) {
             jButton9.setText(jButton6.getText());
             jButton9.setIcon(jButton6.getIcon());
             jButton6.setVisible(false);
             jButton9.setVisible(true);
         }
-        if(jButton3.isVisible()==false){
+        if (jButton3.isVisible() == false) {
             jButton3.setText(jButton6.getText());
             jButton3.setIcon(jButton6.getIcon());
             jButton6.setVisible(false);
             jButton3.setVisible(true);
         }
-        if(jButton5.isVisible()==false){
+        if (jButton5.isVisible() == false) {
             jButton5.setText(jButton6.getText());
             jButton5.setIcon(jButton6.getIcon());
             jButton6.setVisible(false);
@@ -284,161 +291,161 @@ int i=0;
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        if(jButton9.isVisible()==false){
-            jButton9.setText(jButton8.getText()); 
+        // sets button's 8 behaviour in relation to its neighbours > 9,7,5
+        if (jButton9.isVisible() == false) {
+            jButton9.setText(jButton8.getText());
             jButton9.setIcon(jButton8.getIcon());
-            jButton8.setVisible(false); 
-            jButton9.setVisible(true);  
+            jButton8.setVisible(false);
+            jButton9.setVisible(true);
         }
-        if(jButton7.isVisible()==false){
+        if (jButton7.isVisible() == false) {
             jButton7.setText(jButton8.getText());
             jButton7.setIcon(jButton8.getIcon());
-            jButton8.setVisible(false); 
-            jButton7.setVisible(true);  
+            jButton8.setVisible(false);
+            jButton7.setVisible(true);
         }
-        if(jButton5.isVisible()==false){
-            jButton5.setText(jButton8.getText()); 
+        if (jButton5.isVisible() == false) {
+            jButton5.setText(jButton8.getText());
             jButton5.setIcon(jButton8.getIcon());
-            jButton8.setVisible(false); 
-            jButton5.setVisible(true);  
+            jButton8.setVisible(false);
+            jButton5.setVisible(true);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        if (jButton6.isVisible() == false){
-        jButton6.setText(jButton9.getText());
-        jButton6.setIcon(jButton9.getIcon());
-        jButton9.setVisible(false);
-        jButton6.setVisible(true);
+        if (jButton6.isVisible() == false) {
+            jButton6.setText(jButton9.getText());
+            jButton6.setIcon(jButton9.getIcon());
+            jButton9.setVisible(false);
+            jButton6.setVisible(true);
         }
-        if (jButton8.isVisible() == false){
-        jButton8.setText(jButton9.getText());
-        jButton8.setIcon(jButton9.getIcon());
-        jButton9.setVisible(false);
-        jButton8.setVisible(true);
+        if (jButton8.isVisible() == false) {
+            jButton8.setText(jButton9.getText());
+            jButton8.setIcon(jButton9.getIcon());
+            jButton9.setVisible(false);
+            jButton8.setVisible(true);
         }
         puzzleDone();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        if(jButton8.isVisible()==false){
+        if (jButton8.isVisible() == false) {
             jButton8.setText(jButton5.getText());
             jButton8.setIcon(jButton5.getIcon());
             jButton5.setVisible(false);
-            jButton8.setVisible(true);  
+            jButton8.setVisible(true);
         }
-        if(jButton6.isVisible()==false){
+        if (jButton6.isVisible() == false) {
             jButton6.setText(jButton5.getText());
             jButton6.setIcon(jButton5.getIcon());
-            jButton5.setVisible(false); 
-            jButton6.setVisible(true);  
+            jButton5.setVisible(false);
+            jButton6.setVisible(true);
         }
-        if(jButton4.isVisible()==false){
-            jButton4.setText(jButton5.getText()); 
+        if (jButton4.isVisible() == false) {
+            jButton4.setText(jButton5.getText());
             jButton4.setIcon(jButton5.getIcon());
-            jButton5.setVisible(false); 
-            jButton4.setVisible(true); 
+            jButton5.setVisible(false);
+            jButton4.setVisible(true);
         }
-        if(jButton2.isVisible()==false){
-            jButton2.setText(jButton5.getText()); 
+        if (jButton2.isVisible() == false) {
+            jButton2.setText(jButton5.getText());
             jButton2.setIcon(jButton5.getIcon());
-            jButton5.setVisible(false); 
-            jButton2.setVisible(true); 
+            jButton5.setVisible(false);
+            jButton2.setVisible(true);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        if(jButton2.isVisible()==false){
-            jButton2.setText(jButton3.getText()); 
+        if (jButton2.isVisible() == false) {
+            jButton2.setText(jButton3.getText());
             jButton2.setIcon(jButton3.getIcon());
             jButton3.setVisible(false);
-            jButton2.setVisible(true);  
+            jButton2.setVisible(true);
         }
-        if(jButton6.isVisible()==false){
-            jButton6.setText(jButton3.getText()); 
+        if (jButton6.isVisible() == false) {
+            jButton6.setText(jButton3.getText());
             jButton6.setIcon(jButton3.getIcon());
-            jButton3.setVisible(false); 
-            jButton6.setVisible(true);  
+            jButton3.setVisible(false);
+            jButton6.setVisible(true);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(jButton1.isVisible()==false){
-            jButton1.setText(jButton2.getText()); 
+        if (jButton1.isVisible() == false) {
+            jButton1.setText(jButton2.getText());
             jButton1.setIcon(jButton2.getIcon());
-            jButton2.setVisible(false); 
-            jButton1.setVisible(true);  
+            jButton2.setVisible(false);
+            jButton1.setVisible(true);
         }
-        if(jButton3.isVisible()==false){
-            jButton3.setText(jButton2.getText()); 
+        if (jButton3.isVisible() == false) {
+            jButton3.setText(jButton2.getText());
             jButton3.setIcon(jButton2.getIcon());
-            jButton2.setVisible(false); 
-            jButton3.setVisible(true);  
+            jButton2.setVisible(false);
+            jButton3.setVisible(true);
         }
-        if(jButton5.isVisible()==false){
-            jButton5.setText(jButton2.getText()); 
+        if (jButton5.isVisible() == false) {
+            jButton5.setText(jButton2.getText());
             jButton5.setIcon(jButton2.getIcon());
-            jButton2.setVisible(false); 
-            jButton5.setVisible(true);  
-        }        
+            jButton2.setVisible(false);
+            jButton5.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(jButton4.isVisible()==false){
+        if (jButton4.isVisible() == false) {
             jButton4.setText(jButton1.getText());
             jButton4.setIcon(jButton1.getIcon());
-            jButton1.setVisible(false); 
-            jButton4.setVisible(true); 
+            jButton1.setVisible(false);
+            jButton4.setVisible(true);
         }
-        if(jButton2.isVisible()==false){
+        if (jButton2.isVisible() == false) {
             jButton2.setText(jButton1.getText());
             jButton2.setIcon(jButton1.getIcon());
-            jButton1.setVisible(false); 
-            jButton2.setVisible(true);  
-        }        
+            jButton1.setVisible(false);
+            jButton2.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        if(jButton7.isVisible()==false){
+        if (jButton7.isVisible() == false) {
             jButton7.setText(jButton4.getText());
             jButton7.setIcon(jButton4.getIcon());
-            jButton4.setVisible(false); 
-            jButton7.setVisible(true);  
+            jButton4.setVisible(false);
+            jButton7.setVisible(true);
         }
-        if(jButton1.isVisible()==false){
+        if (jButton1.isVisible() == false) {
             jButton1.setText(jButton4.getText());
             jButton1.setIcon(jButton4.getIcon());
-            jButton4.setVisible(false); 
-            jButton1.setVisible(true);  
+            jButton4.setVisible(false);
+            jButton1.setVisible(true);
         }
-        if(jButton5.isVisible()==false){
-            jButton5.setText(jButton4.getText()); 
+        if (jButton5.isVisible() == false) {
+            jButton5.setText(jButton4.getText());
             jButton5.setIcon(jButton4.getIcon());
-            jButton4.setVisible(false); 
-            jButton5.setVisible(true);  
-        }        
+            jButton4.setVisible(false);
+            jButton5.setVisible(true);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        if(jButton8.isVisible()==false){
-            jButton8.setText(jButton7.getText()); 
+        if (jButton8.isVisible() == false) {
+            jButton8.setText(jButton7.getText());
             jButton8.setIcon(jButton7.getIcon());
-            jButton7.setVisible(false); 
-            jButton8.setVisible(true);  
+            jButton7.setVisible(false);
+            jButton8.setVisible(true);
         }
-        if(jButton4.isVisible()==false){
-            jButton4.setText(jButton7.getText()); 
+        if (jButton4.isVisible() == false) {
+            jButton4.setText(jButton7.getText());
             jButton4.setIcon(jButton7.getIcon());
-            jButton7.setVisible(false); 
-            jButton4.setVisible(true);  
-        }        
+            jButton7.setVisible(false);
+            jButton4.setVisible(true);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -461,24 +468,24 @@ int i=0;
         jButton7.setVisible(true);
         jButton8.setVisible(true);
         jButton9.setVisible(false);
-            
-        jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/1.jpg")));
-        jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/2.jpg")));
-        jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/3.jpg")));
-        jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/4.jpg")));
-        jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/5.jpg")));
-        jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/6.jpg")));
-        jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/7.jpg")));
-        jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/8.jpg")));
-        jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/9.jpg")));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/1.jpg")));
+        jButton2.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/2.jpg")));
+        jButton3.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/3.jpg")));
+        jButton4.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/4.jpg")));
+        jButton5.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/5.jpg")));
+        jButton6.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/6.jpg")));
+        jButton7.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/7.jpg")));
+        jButton8.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/8.jpg")));
+        jButton9.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/9.jpg")));
         puzzleDone();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseEntered
-        // TODO add your handling code here:
+        // add visual effect for the buuton
         jButton10.setForeground(Color.red);
         jButton10.setBackground(Color.blue);
-        
+
     }//GEN-LAST:event_jButton10MouseEntered
 
     private void jButton10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseExited
@@ -488,67 +495,104 @@ int i=0;
     }//GEN-LAST:event_jButton10MouseExited
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-        i=0;
-        
-        int n=8;  //numeros aleatorios
-        int k=n;  //auxiliar;
-        int[] numeros=new int[n];
-        int[] valor=new int[n];
-        Random rnd=new Random();
-        int res;
+        // the start button randomly puts the tiles in the game
 
-        //se rellena una matriz ordenada del 1 al 9(1..n)
-        for(int i=0;i<n;i++){
-            numeros[i]=i+1;
+        int n = 8;  // n represents the 8 random numbers
+        int k = n;  //auxuliar variable
+        int[] numbers = new int[n];// makes an array called numbers with 8 empty spaces including index 0 
+        int[] value = new int[n];// makes an array called value with empty spaces including index 0
+        Random rnd = new Random();// creates a new object of type random
+        int mix;
+
+        //(makes an array form 0 to 8
+        for (int i = 0; i < n; i++) {
+            numbers[i] = i + 1;//assigns values from 1 to 8 to the numbers[] array
+            // index 0 stores value 1, index 1 stores value 2 etc..
         }
 
-        for(int i=0;i<n;i++){
-            res=rnd.nextInt(k);
-            valor[i]=numeros[res];
-            numeros[res]=numeros[k-1];
+        for (int i = 0; i < n; i++) {
+            mix = rnd.nextInt(k);// returns an int value from 0 to 7
+            value[i] = numbers[mix];
+            numbers[mix] = numbers[k - 1];
             k--;
-            System.out.println(valor[i]);
+            System.out.println(value[i]);
         }
         System.out.println("------------------------------------------");
 
-        jButton1.setText(String.valueOf(valor[0]));
-        jButton2.setText(String.valueOf(valor[1]));
-        jButton3.setText(String.valueOf(valor[2]));
-        jButton4.setText(String.valueOf(valor[3]));
-        jButton5.setText(String.valueOf(valor[4]));
-        jButton6.setText(String.valueOf(valor[5]));
-        jButton7.setText(String.valueOf(valor[6]));
-        jButton8.setText(String.valueOf(valor[7]));
-        
-        jButton9.setVisible(false);//espacio que permite realizar los moviemientos en le PUZZLE
-        
+        jButton1.setText(String.valueOf(value[0]));
+        jButton2.setText(String.valueOf(value[1]));
+        jButton3.setText(String.valueOf(value[2]));
+        jButton4.setText(String.valueOf(value[3]));
+        jButton5.setText(String.valueOf(value[4]));
+        jButton6.setText(String.valueOf(value[5]));
+        jButton7.setText(String.valueOf(value[6]));
+        jButton8.setText(String.valueOf(value[7]));
+
+        jButton9.setVisible(false);//the blank space on button 9
+
         System.out.println("------------------------------------------");
-        this.jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[0]+".jpg")));
-        this.jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[1]+".jpg")));
-        this.jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[2]+".jpg")));
-        this.jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[3]+".jpg")));
-        this.jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[4]+".jpg")));
-        this.jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[5]+".jpg")));
-        this.jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[6]+".jpg")));
-        this.jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[7]+".jpg")));
-        
+
+        this.jButton1.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[0] + ".jpg")));
+        this.jButton2.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[1] + ".jpg")));
+        this.jButton3.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[2] + ".jpg")));
+        this.jButton4.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[3] + ".jpg")));
+        this.jButton5.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[4] + ".jpg")));
+        this.jButton6.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[5] + ".jpg")));
+        this.jButton7.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[6] + ".jpg")));
+        this.jButton8.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + value[7] + ".jpg")));
+
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+    private void ClockMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClockMouseEntered
 
-    }//GEN-LAST:event_jLabel4MouseEntered
+//        new Thread(){
+//        
+//        public void run(){
+//        
+//            while(true){
+//            
+//                Calendar cal = new GregorianCalendar();
+//                int hours = cal.get(Calendar.HOUR);
+//                int minutes = cal.get(Calendar.MINUTE);
+//                int seconds = cal.get(Calendar.SECOND );
+//                int AM_PM =  cal.get(Calendar.AM_PM );
+//                       
+//                String day_night = "";
+//                
+//                if(AM_PM == 1){
+//                
+//                    day_night  = "PM";
+//                
+//                }
+//                else{
+//                
+//                    day_night = "AM";
+//                
+//                }
+//            
+//            String time = "Current time: " + hours + ":" + minutes + ":" + seconds + " " + day_night; 
+//            
+//             Clock.setText(time);
+//            }
+//        
+//        }
+//        
+//        
+//        }.start();
+       
+    }//GEN-LAST:event_ClockMouseEntered
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+    private void ClockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClockMouseClicked
 
-    }//GEN-LAST:event_jLabel4MouseClicked
+
+    }//GEN-LAST:event_ClockMouseClicked
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Clock;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -563,63 +607,54 @@ int i=0;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 
-private void puzzleDone() {
-       String b1=jButton1.getText();
-       String b2=jButton2.getText();
-       String b3=jButton3.getText();
-       String b4=jButton4.getText();
-       String b5=jButton5.getText();
-       String b6=jButton6.getText();
-       String b7=jButton7.getText();
-       String b8=jButton8.getText();
-       //String b9=btn9.getText();
-       
-       if(b1.equals("1")&&b2.equals("2")&&b3.equals("3")&&b4.equals("4")&&
-          b5.equals("5")&&b6.equals("6")&&b7.equals("7")&&b8.equals("8")&&jButton9.isVisible()==false){
-           JOptionPane.showMessageDialog(rootPane,"You completed the picture!! Here are some informations about the picture:");    
-       }    
-       
-    }   
-private void setIcons() {
-   /* jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile1.jpg")));
-    jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile2.jpg")));
-    jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile3.jpg")));
-    jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile4.jpg")));
-    jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile5.jpg")));
-    jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile6.jpg")));
-    jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile7.jpg")));
-    jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile8.jpg")));
-    jButton9.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/Tile9.jpg")));
-           */
-    jLabel2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid.jpg")));
-    jLabel3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/brand.jpg")));
-    
-}
-  public void startRandom() {
-        i=0;
-        
-        int n=8;  //numeros aleatorios
-        int k=n;  //auxiliar;
-        int[] numeros=new int[n];
-        int[] valor=new int[n];
-        Random rnd=new Random();
+    private void puzzleDone() {
+        String b1 = jButton1.getText();
+        String b2 = jButton2.getText();
+        String b3 = jButton3.getText();
+        String b4 = jButton4.getText();
+        String b5 = jButton5.getText();
+        String b6 = jButton6.getText();
+        String b7 = jButton7.getText();
+        String b8 = jButton8.getText();
+
+        if (b1.equals("1") && b2.equals("2") && b3.equals("3") && b4.equals("4")
+                && b5.equals("5") && b6.equals("6") && b7.equals("7") && b8.equals("8") && jButton9.isVisible() == false) {
+            JOptionPane.showMessageDialog(rootPane, "You completed the picture!! Here are some informations about the picture:");
+        }
+        timer.stop();
+
+    }
+
+    private void setIcons() {
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid.jpg")));
+        jLabel3.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/brand.jpg")));
+
+    }
+
+    public void startRandom() {
+        i = 0;
+
+        int n = 8;
+        int k = n;
+        int[] numeros = new int[n];
+        int[] valor = new int[n];
+        Random rnd = new Random();
         int res;
 
-        //se rellena una matriz ordenada del 1 al 9(1..n)
-        for(int i=0;i<n;i++){
-            numeros[i]=i+1;
+        for (int i = 0; i < n; i++) {
+            numeros[i] = i + 1;
         }
 
-        for(int i=0;i<n;i++){
-            res=rnd.nextInt(k);
-            valor[i]=numeros[res];
-            numeros[res]=numeros[k-1];
+        for (int i = 0; i < n; i++) {
+            res = rnd.nextInt(k);
+            valor[i] = numeros[res];
+            numeros[res] = numeros[k - 1];
             k--;
             System.out.println(valor[i]);
         }
@@ -633,21 +668,32 @@ private void setIcons() {
         jButton6.setText(String.valueOf(valor[5]));
         jButton7.setText(String.valueOf(valor[6]));
         jButton8.setText(String.valueOf(valor[7]));
-        
-        jButton9.setVisible(false);//espacio que permite realizar los moviemientos en le PUZZLE
-        
-        System.out.println("------------------------------------------");
-        this.jButton1.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[0]+".jpg")));
-        this.jButton2.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[1]+".jpg")));
-        this.jButton3.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[2]+".jpg")));
-        this.jButton4.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[3]+".jpg")));
-        this.jButton5.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[4]+".jpg")));
-        this.jButton6.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[5]+".jpg")));
-        this.jButton7.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[6]+".jpg")));
-        this.jButton8.setIcon(new  javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/"+valor[7]+".jpg")));      
-  }
-  
-  
-  
-}
 
+        jButton9.setVisible(false);
+
+        System.out.println("------------------------------------------");
+        this.jButton1.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[0] + ".jpg")));
+        this.jButton2.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[1] + ".jpg")));
+        this.jButton3.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[2] + ".jpg")));
+        this.jButton4.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[3] + ".jpg")));
+        this.jButton5.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[4] + ".jpg")));
+        this.jButton6.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[5] + ".jpg")));
+        this.jButton7.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[6] + ".jpg")));
+        this.jButton8.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("../images/mermaid/" + valor[7] + ".jpg")));
+        
+        time();
+    }
+    
+    private void time() { 
+        timer = new javax.swing.Timer(1000, new java.awt.event.ActionListener() { 
+        @ Override 
+        public void actionPerformed(java.awt.event.ActionEvent ae) { 
+           i++;
+           //System.out.println(i);
+           Clock.setText(String.valueOf(i)+" Seconds");
+        } 
+        }); 
+        timer.start(); 
+    }
+
+}
